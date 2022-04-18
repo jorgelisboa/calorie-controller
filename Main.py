@@ -1,26 +1,35 @@
-def verifyUser(username, password):
-    if username == "nome de usuário":
-        #check the password
-        if password == "senha daquele usuário":
-            #enter in his data
-            print("Welcome " + username)
-            return True
-        else:
-            #say incorrect password  
-            print("Incorret password")  
-    else:
-        #user not found 
-        print("User not found")
+import PySimpleGUI as sg
+import Data as db
 
-def Login():
-    #Asks user to 
-    username = input("What's your username? ")
-    password = input("What's your password? ")
+#Variables
+username = None
+password = None 
 
-    verifyUser(username, password)
-    
-def startApp():
-    print("Nutri app started")
-    Login()
+class TelaLogin:
 
-startApp()
+
+    def __init__(self):
+        #Layout
+        def createLayout():
+
+            layout = [
+                [sg.Text("Login", size=(10,0)), sg.Input(size=(25,0), key='username')],
+                [sg.Text("Password", size=(10,0)), sg.Input(size=(25,0), key='password')],
+                [sg.Button("Login", size=(35,0))]
+            ]  
+            return layout                               
+                
+        #Janela
+        window = sg.Window("Login").layout(createLayout())  
+        self.button, self.values = window.Read()
+
+    def Iniciar(self):
+        username = self.values['username']
+        password = self.values['password']
+        print('nome: '+username+' password: '+password)
+
+    def checkLogin():
+        #DB class calling
+
+tela = TelaLogin()
+tela.Iniciar()

@@ -1,5 +1,9 @@
 class Function:
-
+    
+    #Variables
+    consumedFood = [[],[]]
+    
+    ###IMC###
     def calcImc(altura, peso):
 
         imcValue = peso / (altura ** altura)
@@ -17,3 +21,25 @@ class Function:
             return "OBESIDADE"
         elif imc > 40:
             return "OBESIDADE GRAVE"
+
+        
+    ###CALORIES### 
+    def returnFoodList():
+        return consumedFood
+    
+    def addFood(foodName, calories):
+        consumedFood[0].append(foodName)
+        consumedFood[1].append(calories)
+
+    def countTotalCalories():
+        count = 0
+        totalCalories = 0
+        while count <= len(consumedFood)+1:
+            totalCalories += consumedFood[1][count]
+            count = count+1
+            
+    def listAllEatenFood():
+        count = 0
+        while count <= len(consumedFood)+1:
+            print(str(consumedFood[0][count]) + " -> " + str(consumedFood[1][count]))
+            count = count+1

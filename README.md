@@ -9,11 +9,11 @@ The tutorial guides you through installing Python and using the extension. You m
 
 ##### Install the following libraries for running the app:
 ```
-pip install mysql-connector-python
+pip install cx-Oracle
 pip install PySimpleGUI==4.59.0
 ```
 
 ##### And see some videos here:
 [PyAutoGUI](https://www.youtube.com/watch?v=Et0fYeA2XxY)
 
-[MySQL](https://www.w3schools.com/python/python_mysql_create_db.asp)
+[Oracle](https://www.oracle.com/br/technical-resources/articles/dsl/phyton-com-oracle-database-11g.html)

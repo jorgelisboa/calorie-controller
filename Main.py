@@ -4,28 +4,42 @@ import Data as db
 #Variables
 username = None
 password = None 
+sex = None
 consumedFood = [[],[]]
 
 class TelaLogin:
 
-    ###IMC###
+    ### IMC ###
     def calcImc(altura, peso):
-
         imcValue = peso / (altura ** altura)
         return imcValue
 
-    def findCategory(imc):
-        if imc < 18.5:
-            return "MAGREZA"
-        elif imc >= 18.5 and imc <= 24.9:
-            return "NORMAL"
-        elif imc >= 25 and imc <= 29.9:
-            return "SOBREPESO"
-        elif imc >= 30 and imc <= 39.9:
-            return "OBESIDADE"
-        elif imc > 40:
-            return "OBESIDADE GRAVE"
-    
+    def findCategory(imc, sex):
+        if ("f"):
+            if imc < 19.1:
+                return "MAGREZA"
+            elif imc >= 19.1 and imc <= 25.8:
+                return "NORMAL"
+            elif imc >= 25.8 and imc <= 27.3:
+                return "SOBREPESO"
+            elif imc >= 27.3 and imc <= 32.3:
+                return "OBESIDADE"
+            elif imc > 32.3:
+                return "OBESIDADE GRAVE"
+        elif (sex == "m"):
+            if imc < 20.7:
+                return "MAGREZA"
+            elif imc >= 20.7 and imc <= 26.4:
+                return "NORMAL"
+            elif imc >= 26.4 and imc <= 27.8:
+                return "SOBREPESO"
+            elif imc >= 27.8 and imc <= 31.1:
+                return "OBESIDADE"
+            elif imc > 31.1:
+                return "OBESIDADE GRAVE"
+        else:
+            return "NENHUMA CATEGORIA"
+        
     ###CALORIES### 
     def returnFoodList():
         return consumedFood
@@ -49,7 +63,7 @@ class TelaLogin:
 
 
 
-    #Layout
+    # LAYOUT
     def __init__(self):
         def createLayout():
 
